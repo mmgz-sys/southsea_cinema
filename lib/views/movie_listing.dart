@@ -15,7 +15,16 @@ class MovieListing extends StatelessWidget {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: const SizedBox.shrink(),
+      body: const SizedBox(
+        child: Row(
+          children: [
+            Text(
+              'Ponyo (2008) (U)',
+              style: TextStyle(fontSize: 40),
+              ),
+          ],
+        ),
+      ),
     );
   }
 }
