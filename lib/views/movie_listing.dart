@@ -11,6 +11,7 @@ class MovieListing extends StatefulWidget {
 
 class _MovieListingState extends State<MovieListing> {
   int _quantity = 0;
+  String _bookingMessage = '';
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class _MovieListingState extends State<MovieListing> {
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
             Row(
               children: [
                 const Text('Ponyo (2008) (U)', style: TextStyle(fontSize: 40)),
@@ -75,7 +76,17 @@ class _MovieListingState extends State<MovieListing> {
               const Text('Adult £7.50'),
               ],
             ),
-          ),
+            ),
+            const SizedBox(height: 20),
+        ElevatedButton(
+              onPressed: () {
+                setState(() => _bookingMessage = 'Added $_quantity tickets to your order');
+                // Handle the button press
+              },
+              child: const Text('Add to Order'),
+            ),
+            const SizedBox(height: 30),
+            Text(_bookingMessage),
           ],
         ),
       ),
