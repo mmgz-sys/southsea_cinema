@@ -23,8 +23,9 @@ class _MovieListingState extends State<MovieListing> {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: Padding(
+      body: Container(
         padding: const EdgeInsets.all(16),
+        color: Colors.,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -54,33 +55,34 @@ class _MovieListingState extends State<MovieListing> {
               child: Row(
                 children: [
                   DropdownMenu<int>(
-                  initialSelection: _quantity,
-                  onSelected: (int? value){
-                    if (value != null) {
-                      setState(() {
-                        _quantity = value;
-                      });
-                    }
-                  },
-                  dropdownMenuEntries: const [
-                    DropdownMenuEntry(value: 0, label: '0'),
-                    DropdownMenuEntry(value: 1, label: '1'),
-                    DropdownMenuEntry(value: 2, label: '2'),
-                    DropdownMenuEntry(value: 3, label: '3'),
-                    DropdownMenuEntry(value: 4, label: '4'),
-                    DropdownMenuEntry(value: 5, label: '5'),
-                    DropdownMenuEntry(value: 6, label: '6'),
-                  ],
+                    initialSelection: _quantity,
+                    onSelected: (int? value) {
+                      if (value != null) {
+                        setState(() {
+                          _quantity = value;
+                        });
+                      }
+                    },
+                    dropdownMenuEntries: const [
+                      DropdownMenuEntry(value: 0, label: '0'),
+                      DropdownMenuEntry(value: 1, label: '1'),
+                      DropdownMenuEntry(value: 2, label: '2'),
+                      DropdownMenuEntry(value: 3, label: '3'),
+                      DropdownMenuEntry(value: 4, label: '4'),
+                      DropdownMenuEntry(value: 5, label: '5'),
+                      DropdownMenuEntry(value: 6, label: '6'),
+                    ],
+                  ),
+                  const SizedBox(width: 50),
+                  const Text('Adult £7.50'),
+                ],
               ),
-              const SizedBox(width: 50),
-              const Text('Adult £7.50'),
-              ],
-            ),
             ),
             const SizedBox(height: 20),
-        ElevatedButton(
+            ElevatedButton(
               onPressed: () {
-                setState(() => _bookingMessage = 'Added $_quantity tickets to your order');
+                setState(() =>
+                    _bookingMessage = 'Added $_quantity tickets to your order');
                 // Handle the button press
               },
               child: const Text('Add to Order'),
