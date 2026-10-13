@@ -25,7 +25,7 @@ class _MovieListingState extends State<MovieListing> {
       drawer: const NavDrawer(),
       body: Container(
         padding: const EdgeInsets.all(16),
-        color: Colors.,
+        color: const Color.fromARGB(255, 11, 50, 82),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
