@@ -15,8 +15,7 @@ class MovieCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(crossAxisAlignment: CrossAxisAlignment.start, 
-              children: [
+              Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Image.asset(
                   movie.posterImagePath,
                   width: 100,
@@ -24,8 +23,7 @@ class MovieCard extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
                 const SizedBox(width: 16.0),
-                Column(crossAxisAlignment: CrossAxisAlignment.start,
-                 children: [
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Text(
                     movie.title,
                     style: const TextStyle(
@@ -34,6 +32,21 @@ class MovieCard extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
+                  Text(
+                    movie.ageRating,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    movie.screeningTime,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: Colors.white,
+                    ),
+                  ),
                   Text(
                     movie.synopsis,
                     style: const TextStyle(
@@ -44,8 +57,7 @@ class MovieCard extends StatelessWidget {
                 ])
               ]),
               const SizedBox(height: 8),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, 
-              children: [
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 Text(
                   '£${movie.ticketPrice.toStringAsFixed(2)}',
                   style: const TextStyle(
@@ -54,13 +66,14 @@ class MovieCard extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    print('Booking tickets for ${movie.title}');
+                  },
                   child: const Text('Order Now'),
                 ),
-              ]
-            ),
-          ],
-        ),
-      ));
+              ]),
+            ],
+          ),
+        ));
   }
 }
