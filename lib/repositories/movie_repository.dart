@@ -1,8 +1,7 @@
 import 'package:southsea_cinema/models/movie.dart';
 
-
 class MovieRepository {
-  List<Movie> getmovies() {
+  List<Movie> getMovies() {
     return [
       Movie(
         id: '1',
@@ -12,7 +11,7 @@ class MovieRepository {
         ageRating: 'PG-13',
         screeningTime: '1h 59m',
         ticketPrice: 7.50,
-        posterImagePath: 'assets/images/howls_moving_castle.jpg',
+        posterImagePath: 'assets/images/howls-moving-castle-poster.jpg',
       ),
       Movie(
         id: '2',
@@ -22,7 +21,7 @@ class MovieRepository {
         ageRating: 'PG-13',
         screeningTime: '2h 13m',
         ticketPrice: 7.50,
-        posterImagePath: 'assets/images/princess_mononoke.jpg',
+        posterImagePath: 'assets/images/OIP (1).webp',
       ),
     ];
   }

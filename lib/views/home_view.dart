@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/repositories/movie_repository.dart';
 import 'package:southsea_cinema/widgets/movie_card.dart';
+import 'package:southsea_cinema/widgets/nav_drawer.dart';
 
 
 class HomeView extends StatelessWidget {
@@ -10,12 +11,13 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final MovieRepository repository = MovieRepository();
-    final List<Movie> movies = repository.getmovies();
+    final List<Movie> movies = repository.getMovies();
 
     return Scaffold(
       appBar: AppBar(
         title: const Text ('Southsea Cinema'),
       ),
+      drawer: const NavDrawer(),
       body: ListView.builder(
         itemCount: movies.length,
         itemBuilder: (context, index) {
