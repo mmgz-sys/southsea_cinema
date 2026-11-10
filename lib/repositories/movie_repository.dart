@@ -2,7 +2,7 @@ import 'package:southsea_cinema/models/movie.dart';
 
 class MovieRepository {
   List<Movie> getMovies() {
-    return [
+    return const [
       Movie(
         id: '1',
         title: 'Howls Moving Castle',
@@ -24,5 +24,13 @@ class MovieRepository {
         posterImagePath: 'assets/images/OIP (1).webp',
       ),
     ];
+  }
+  Movie? getMovieById(String id) {
+    for (final movie in getMovies()){
+      if (movie.id == id) {
+        return movie;
+      }
+    }
+    return null;
   }
 }
