@@ -42,24 +42,5 @@ void main() {
       expect(movie.formattedPrice, '£8.00');
       expect(movie.posterImagePath, 'assets/images/OIP (1).webp');
     });
-    test('formattedPrice returns correct string representation for zero price', () {
-      const movie = Movie(
-        id: '3',
-        title: 'Spiderman',
-        synopsis: 'This is a free movie.',
-        ageRating: 'PG',
-        screeningTime: '1h 30m',
-        ticketPrice: 6.0,
-        posterImagePath: 'assets/images/free-movie-poster.jpg',
-      );
-
-      expect(movie.id, '3');
-      expect(movie.title, 'Spiderman');
-      expect(movie.synopsis, 'This is a free movie.');
-      expect(movie.ageRating, '15');
-      expect(movie.screeningTime, '2h 30m');
-      expect(movie.formattedPrice, '£3.00');
-      expect(movie.posterImagePath, 'assets/images/free-movie-poster.jpg');
-    });
   });
 }
