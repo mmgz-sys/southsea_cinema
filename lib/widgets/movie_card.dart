@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/models/movie.dart';
 
-class MovieCard extends StatelessWidget {
+class MovieCard extends StatefulWidget {
   final Movie movie;
 
   const MovieCard({super.key, required this.movie});
+
+  @override
+  State<MovieCard> createState() => _MovieCardState();
+}
+
+class _MovieCardState extends State<MovieCard> {
+  String _bookingMessage = '';
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +24,7 @@ class MovieCard extends StatelessWidget {
             children: [
               Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Image.asset(
-                  movie.posterImagePath,
+                  widget.movie.posterImagePath,
                   width: 100,
                   height: 150,
                   fit: BoxFit.cover,
@@ -28,7 +35,7 @@ class MovieCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        movie.title,
+                        widget.movie.title,
                         style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -37,7 +44,7 @@ class MovieCard extends StatelessWidget {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        movie.ageRating,
+                        widget.movie.ageRating,
                         style: const TextStyle(
                           fontSize: 14,
                           color: Colors.black,
@@ -45,14 +52,14 @@ class MovieCard extends StatelessWidget {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        movie.screeningTime,
+                        widget.movie.screeningTime,
                         style: const TextStyle(
                           fontSize: 14,
                           color: Colors.black,
                         ),
                       ),
                       Text(
-                        movie.synopsis,
+                        widget.movie.synopsis,
                         style: const TextStyle(
                           fontSize: 14,
                           color: Colors.black,
@@ -65,7 +72,7 @@ class MovieCard extends StatelessWidget {
               const SizedBox(height: 8),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 Text(
-                  movie.formattedPrice,
+                  widget.movie.formattedPrice,
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -74,11 +81,21 @@ class MovieCard extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    print('Booking tickets for ${movie.title}');
+                    _bookingMessage = 'Booking tickets for ${widget.movie.title}';
                   },
                   child: const Text('Order Now'),
                 ),
               ]),
+            
+            const SizedBox(height: 8),
+
+            Text (
+              _bookingMessage,
+              style: const TextStyle(
+                fontSize: 14,
+                color: Colors.black,
+              ),
+            )
             ],
           ),
         ));
