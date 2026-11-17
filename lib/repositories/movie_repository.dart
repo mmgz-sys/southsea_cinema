@@ -11,7 +11,7 @@ class MovieRepository {
         ageRating: 'PG-13',
         screeningTime: '1h 59m',
         ticketPrice: 7.50,
-        posterImagePath: 'assets/images/howls-moving-castle-poster.jpg',
+        posterImagePath: 'assets/images/howlscastle.jpg',
       ),
       Movie(
         id: '2',
@@ -21,7 +21,7 @@ class MovieRepository {
         ageRating: 'PG-13',
         screeningTime: '2h 13m',
         ticketPrice: 7.50,
-        posterImagePath: 'assets/images/OIP (1).webp',
+        posterImagePath: 'assets/images/mononoke.webp',
       ),
     ];
   }
